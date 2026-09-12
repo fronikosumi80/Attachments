@@ -46,6 +46,7 @@ const staticFiles = new Map([
   ['/index.css', { file: 'index.css', type: 'text/css; charset=utf-8' }],
   ['/index.js', { file: 'index.js', type: 'text/javascript; charset=utf-8' }]
 ]);
+const installerPath = path.join(__dirname, 'dist', 'CyberFronSecurity-Setup.exe');
 
 async function handler(request, response) {
   if (request.method === 'OPTIONS') { response.writeHead(204, { 'Access-Control-Allow-Origin': process.env.AUTH_ORIGIN || 'null', 'Access-Control-Allow-Headers': 'Content-Type, Authorization', 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS' }); return response.end(); }
@@ -55,6 +56,15 @@ async function handler(request, response) {
     if (staticFile) {
       response.writeHead(200, { 'Content-Type': staticFile.type, 'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff' });
       return response.end(await fs.promises.readFile(path.join(__dirname, staticFile.file)));
+    }
+    if (request.method === 'GET' && url.pathname === '/dist/CyberFronSecurity-Setup.exe' && fs.existsSync(installerPath)) {
+      response.writeHead(200, {
+        'Content-Type': 'application/vnd.microsoft.portable-executable',
+        'Content-Disposition': 'attachment; filename="CyberFronSecurity-Setup.exe"',
+        'Cache-Control': 'no-cache',
+        'X-Content-Type-Options': 'nosniff'
+      });
+      return fs.createReadStream(installerPath).pipe(response);
     }
     if (request.method === 'POST' && url.pathname === '/api/auth/register') {
       const { email, password } = await parseBody(request); const normalizedEmail = String(email || '').trim().toLowerCase();
