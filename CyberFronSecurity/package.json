@@ -1,0 +1,53 @@
+{
+  "name": "cyberfronsecurity",
+  "version": "0.1.0",
+  "description": "Transparent, privacy-first Windows protection console.",
+  "main": "main.cjs",
+  "author": "CyberFronSecurity",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "auth:server": "node server.cjs",
+    "dist": "electron-builder --win nsis",
+    "dist:dir": "electron-builder --win dir",
+    "test": "node --test tests"
+  },
+  "devDependencies": {
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.cyberfronsecurity.desktop",
+    "productName": "CyberFronSecurity",
+    "artifactName": "CyberFronSecurity-Setup.exe",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "index.css",
+      "index.js",
+      "main.cjs",
+      "preload.cjs",
+      "engine.cjs",
+      "server.cjs",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "publisherName": "CyberFronSecurity"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "CyberFronSecurity"
+    }
+  }
+}

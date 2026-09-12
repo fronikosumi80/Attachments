@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CyberFronSecurity is a transparent, privacy-first security console for Windows PCs.">
+    <title>CyberFronSecurity | Protection, made visible.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <a class="brand" href="#dashboard" aria-label="CyberFronSecurity home">
+                <span class="brand-mark" aria-hidden="true"><span></span></span>
+                <span>CyberFron<span>Security</span></span>
+            </a>
+            <nav class="main-nav" aria-label="Primary navigation">
+                <a class="nav-link active" href="#dashboard" data-view="dashboard">Overview</a>
+                <a class="nav-link" href="#scanner" data-view="scanner">Scanner</a>
+                <a class="nav-link" href="#quarantine" data-view="quarantine">Quarantine <b class="nav-count">2</b></a>
+                <a class="nav-link" href="#settings" data-view="settings">Settings</a>
+            </nav>
+            <div class="topbar-actions">
+                <a class="button button-primary top-download" href="./dist/CyberFronSecurity-Setup.exe" download data-action="download">Download CyberFronSecurity Free</a>
+                <span class="secure-chip"><span class="pulse-dot"></span>Protection ready</span>
+                <button class="icon-button" data-action="notifications" aria-label="Open notifications">⌁<span class="notification-dot"></span></button>
+                <button class="avatar" data-action="account" aria-label="Open account menu">AR</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="view active" id="dashboard" data-section="dashboard">
+                <div class="page-heading reveal">
+                    <div>
+                        <p class="eyebrow">Monday, 12 September 2026 <span class="live-label"><span class="pulse-dot"></span>Scanner service ready</span></p>
+                        <h1>Your protection, <em>in focus.</em></h1>
+                        <p class="lede">A clear view of what CyberFronSecurity is doing to keep your Windows PC safer.</p>
+                    </div>
+                    <button class="button button-primary" data-action="scan" data-scan-type="quick"><span class="button-icon">＋</span> Run quick scan</button>
+                </div>
+
+                <div class="hero-grid">
+                    <article class="protection-card reveal delay-1">
+                        <div class="protection-top">
+                            <div><p class="card-kicker">Protection status</p><h2>Protection ready</h2><p class="muted">Live monitoring watches protected folders for new or changed files.</p></div>
+                            <div class="shield-icon"><span>✓</span></div>
+                        </div>
+                        <div class="protection-meter"><span></span></div>
+                        <div class="protection-foot"><span><i></i> Real-time protection</span><span class="mono">STARTING</span></div>
+                        <div class="protection-foot"><span><i></i> Web threat shield</span><span class="mono">TEST RULES</span></div>
+                        <div class="protection-foot"><span><i></i> Automatic updates</span><span class="mono">UNCONFIGURED</span></div>
+                    </article>
+                    <article class="scan-card reveal delay-2">
+                        <div class="card-header"><div><p class="card-kicker">Last scan</p><h3>No scan yet</h3></div><span class="status-label">Not run</span></div>
+                        <div class="scan-stat"><strong>0</strong><span>files checked</span><span class="mono scan-time">No scan yet</span></div>
+                        <div class="mini-chart no-data" aria-label="No scan activity recorded"><span>Run a scan to generate activity</span></div>
+                        <div class="chart-labels"><span>No historical data</span><span>Live</span></div>
+                    </article>
+                </div>
+
+                <div class="section-heading"><div><p class="eyebrow">Security center</p><h2>Quietly doing the work</h2></div><button class="text-button" data-view-link="scanner">View activity <span>→</span></button></div>
+                <div class="stats-grid">
+                    <article class="stat-card reveal delay-1"><span class="stat-icon orange">◈</span><div><span class="stat-label">Threats blocked</span><strong>0</strong><small>recorded by this install</small></div></article>
+                    <article class="stat-card reveal delay-2"><span class="stat-icon blue">◌</span><div><span class="stat-label">Files monitored</span><strong>0</strong><small>since last scan</small></div></article>
+                    <article class="stat-card reveal delay-3"><span class="stat-icon green">⌁</span><div><span class="stat-label">Protection uptime</span><strong>0</strong><small>days recorded</small></div></article>
+                </div>
+
+                <div class="lower-grid">
+                    <article class="activity-panel">
+                        <div class="panel-heading"><div><p class="card-kicker">Recent activity</p><h3>Nothing to worry about</h3></div><button class="icon-button subtle" aria-label="More activity options">•••</button></div>
+                        <div class="activity-list"><div class="activity-item"><span class="activity-symbol success">✓</span><div><strong>No security events yet</strong><p>Run a scan to begin recording real activity.</p></div><time>Waiting</time></div></div>
+                    </article>
+                    <article class="recommendation-panel"><div class="recommendation-glow"></div><p class="card-kicker">One small recommendation</p><h3>Turn on secure browser mode</h3><p>Help prevent phishing and unsafe downloads while you browse.</p><button class="button button-light" data-action="secure-mode">Review setting <span>→</span></button><span class="rec-number">01</span></article>
+                </div>
+            </section>
+
+            <section class="view" id="scanner" data-section="scanner"><div class="page-heading"><div><p class="eyebrow">Protection tools</p><h1>Scan with <em>confidence.</em></h1><p class="lede">Use a safe, local scan to inspect your PC. Test mode uses harmless simulated signals only.</p></div></div><div class="scanner-layout"><article class="scan-launcher"><div class="scan-orbit"><span class="orbit-ring ring-one"></span><span class="orbit-ring ring-two"></span><span class="scan-center">⌕</span></div><p class="card-kicker">Ready when you are</p><h2>Choose a scan</h2><p class="muted">Scans run locally and can be stopped at any time.</p><div class="scan-options"><button class="scan-option selected" data-action="scan" data-scan-type="quick"><span class="option-icon">⌁</span><span><strong>Quick scan</strong><small>Key system areas · ~2 min</small></span><span>→</span></button><button class="scan-option" data-action="scan" data-scan-type="full"><span class="option-icon">◉</span><span><strong>Full scan</strong><small>Every accessible file · ~24 min</small></span><span>→</span></button><button class="scan-option" data-action="scan" data-scan-type="custom"><span class="option-icon">⌗</span><span><strong>Custom scan</strong><small>Choose folders to inspect</small></span><span>→</span></button></div></article><article class="scan-detail"><div class="panel-heading"><div><p class="card-kicker">Detection engine</p><h3>Transparent by design</h3></div><span class="engine-badge">v4.18.2</span></div><p>CyberFronSecurity combines signatures with explainable behavioral signals. Any result can be reviewed before quarantine.</p><div class="engine-row"><span>Signature rules</span><strong>18,402</strong><i class="bar"><b style="width:92%"></b></i></div><div class="engine-row"><span>Behavior rules</span><strong>246</strong><i class="bar"><b style="width:76%"></b></i></div><div class="engine-row"><span>Last updated</span><strong>Today, 08:12</strong><i class="bar"><b style="width:100%"></b></i></div><div class="testing-note"><span>ⓘ</span><p><strong>Safe test mode</strong><br>Try the scanner with harmless test files. No real malware is included.</p></div></article></div></section>
+
+            <section class="view" id="quarantine" data-section="quarantine"><div class="page-heading"><div><p class="eyebrow">Containment</p><h1>Quarantine, <em>under control.</em></h1><p class="lede">Detected items stay isolated until you decide what happens next.</p></div></div><article class="table-panel"><div class="panel-heading"><div><p class="card-kicker">Isolated items</p><h3>2 items need review</h3></div><button class="button button-danger" data-action="empty-quarantine">Empty quarantine</button></div><div class="table-wrap"><table><thead><tr><th>Detection</th><th>Location</th><th>Detected</th><th>Status</th><th></th></tr></thead><tbody><tr><td><strong>Simulated.Test.Signal</strong><small>Behavior rule · low risk</small></td><td class="mono">Downloads/test-signal.cfs</td><td>Today, 09:41</td><td><span class="table-status">Isolated</span></td><td><button class="row-action" data-action="item-menu">•••</button></td></tr><tr><td><strong>Suspicious.Script.Demo</strong><small>Signature rule · review</small></td><td class="mono">Desktop/demo-script.js</td><td>08 Sep 2026</td><td><span class="table-status">Isolated</span></td><td><button class="row-action" data-action="item-menu">•••</button></td></tr></tbody></table></div><div class="table-foot"><span>Items are encrypted and cannot run while isolated.</span><button class="text-button" data-action="learn-quarantine">Learn about quarantine <span>→</span></button></div></article></section>
+
+            <section class="view" id="settings" data-section="settings"><div class="page-heading"><div><p class="eyebrow">Control center</p><h1>Protection that <em>fits you.</em></h1><p class="lede">Clear controls, sensible defaults, and no dark patterns.</p></div></div><div class="settings-layout"><article class="settings-nav"><button class="setting-tab active">Protection</button><button class="setting-tab">Scanning</button><button class="setting-tab">Notifications</button><button class="setting-tab">Privacy</button><button class="setting-tab">Updates</button></article><article class="settings-content"><div class="setting-group"><div><h3>Real-time protection</h3><p>Monitor new and modified files for suspicious activity.</p></div><label class="toggle"><input type="checkbox" checked data-setting="realtime"><span></span></label></div><div class="setting-group"><div><h3>Behavior alerts</h3><p>Ask before an app performs potentially destructive actions.</p></div><label class="toggle"><input type="checkbox" checked data-setting="behavior"><span></span></label></div><div class="setting-group"><div><h3>Privacy-respecting telemetry</h3><p>Share anonymous detection signals to improve protection. No file contents.</p></div><label class="toggle"><input type="checkbox" data-setting="telemetry"><span></span></label></div><div class="settings-footer"><span><i class="pulse-dot"></i> Changes save automatically</span><span class="mono">Last saved just now</span></div></article></div></section>
+        </main>
+        <section class="view info-view" id="download" data-section="download"><div class="page-heading"><div><p class="eyebrow">CyberFronSecurity for Windows</p><h1>Protection that starts <em>with clarity.</em></h1><p class="lede">A lightweight desktop companion for Windows 10 and 11. This preview uses safe simulated detections and never includes real malware.</p></div><a class="button button-primary" href="./dist/CyberFronSecurity-Setup.exe" download data-action="download-start">Download CyberFronSecurity Free</a></div><article class="info-panel"><p class="card-kicker">Before you install</p><div class="info-columns"><div><h3>System requirements</h3><p>Windows 10 version 21H2 or later<br>4 GB RAM · 250 MB free storage<br>HTTPS connection for updates</p></div><div><h3>Built for trust</h3><p>Signed updates, minimal permissions, and review-first quarantine. Independent test results will be published here when available.</p></div></div></article></section>
+        <section class="view info-view" id="privacy" data-section="privacy"><div class="page-heading"><div><p class="eyebrow">Your data</p><h1>Privacy, <em>plainly stated.</em></h1><p class="lede">CyberFronSecurity is designed to protect your device without turning your activity into a product.</p></div></div><article class="info-panel prose"><h3>What we collect</h3><p>Local scan results and quarantine details stay on your device by default. Optional anonymous detection signals may include a rule identifier and app version, never file contents or personal documents.</p><h3>Your choices</h3><p>Telemetry is off by default in this preview. You can change it at any time in Settings. We do not sell personal data or use security events for advertising.</p></article></section>
+        <section class="view info-view" id="terms" data-section="terms"><div class="page-heading"><div><p class="eyebrow">Legal</p><h1>Terms of <em>service.</em></h1><p class="lede">A straightforward outline of how CyberFronSecurity can be used.</p></div></div><article class="info-panel prose"><h3>Use responsibly</h3><p>CyberFronSecurity is a defensive tool. You may use its scanning and test features on devices you own or are authorized to administer.</p><h3>Important notice</h3><p>No security product can guarantee detection of every threat. Keep your operating system and applications updated, and maintain independent backups.</p></article></section>
+        <section class="view info-view" id="support" data-section="support"><div class="page-heading"><div><p class="eyebrow">Human support</p><h1>We’re here to <em>help.</em></h1><p class="lede">Tell us what you’re seeing and our support team will help you understand it.</p></div></div><article class="info-panel support-panel"><div><span class="support-icon">✉</span><h3>support@cyberfronsecurity.example</h3><p>Typical response within one business day.</p></div><div><span class="support-icon">?</span><h3>Security knowledge base</h3><p>Setup, scan results, quarantine, and privacy guides.</p></div></article></section>
+        <section class="view web-warning-view" id="web-warning" data-section="web-warning"><div class="web-warning-card"><span class="warning-mark">!</span><p class="eyebrow">Web threat shield</p><h1>Connection <em>blocked.</em></h1><p class="lede">CyberFronSecurity stopped this safe-test page because the detection engine has evidence that it matches a known unsafe rule.</p><div class="warning-details"><span>Detection</span><strong data-web-threat-name>Simulated.Phishing.Page</strong><span>Severity</span><strong class="severity-high">High</strong><span>Recommended action</span><strong>Go back to safety</strong></div><button class="button button-primary" data-action="go-back">Go back to safety</button><button class="text-button" data-action="simulate-threat">Send safe test alert</button><p class="warning-note">No page content was loaded. If you believe this is a mistake, review the detection rule before continuing.</p></div></section>
+        <footer class="site-footer"><div class="footer-brand"><span class="brand-mark small"><span></span></span><span>CyberFronSecurity</span></div><span>Protection made visible. <span class="app-version" data-version>v0.1.0</span></span><div><a href="#privacy" data-view-link="privacy">Privacy</a><a href="#terms" data-view-link="terms">Terms</a><a href="#support" data-view-link="support">Support</a></div></footer>
+    </div>
+    <section class="auth-gate" data-auth-gate hidden>
+        <div class="auth-card">
+            <a class="brand" href="#" aria-label="CyberFronSecurity"><span class="brand-mark" aria-hidden="true"><span></span></span><span>CyberFron<span>Security</span></span></a>
+            <p class="eyebrow">Welcome back</p>
+            <h1>Sign in to protect<br><em>your device.</em></h1>
+            <p class="muted">Your account is required before protection features become available.</p>
+            <form data-auth-form="login">
+                <label>Email address<input name="email" type="email" autocomplete="username" required></label>
+                <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+                <button class="button button-primary" type="submit">Log in</button>
+                <button class="auth-link" type="button" data-auth-mode="forgot">Forgot password?</button>
+            </form>
+            <p class="auth-switch">New to CyberFronSecurity? <button class="auth-link" type="button" data-auth-mode="register">Create account</button></p>
+            <p class="auth-error" data-auth-error role="alert"></p>
+        </div>
+    </section>
+    <div class="account-modal" data-account-modal hidden>
+        <div class="account-card">
+            <button class="modal-close" type="button" data-auth-close aria-label="Close account dialog">×</button>
+            <p class="eyebrow">CyberFronSecurity account</p>
+            <h2 data-auth-title>Log in</h2>
+            <p class="account-summary" data-account-summary></p>
+            <form data-auth-form="modal-login">
+                <label>Email address<input name="email" type="email" autocomplete="username" required></label>
+                <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+                <button class="button button-primary" type="submit">Log in</button>
+            </form>
+            <form data-auth-form="register" hidden>
+                <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+                <label>Password<input name="password" type="password" autocomplete="new-password" minlength="12" required></label>
+                <button class="button button-primary" type="submit">Create account</button>
+            </form>
+            <form data-auth-form="forgot" hidden>
+                <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+                <button class="button button-primary" type="submit">Send reset instructions</button>
+            </form>
+            <p class="auth-error" data-modal-error role="alert"></p>
+            <button class="auth-link" type="button" data-action="logout" data-auth-logout hidden>Log out</button>
+            <button class="auth-link" type="button" data-auth-mode="login">Back to log in</button>
+        </div>
+    </div>
+    <div class="toast" role="status" aria-live="polite"><span class="toast-icon">✓</span><span class="toast-message">Settings saved</span></div>
+    <script src="index.js"></script>
+</body>
+</html>
