@@ -4,7 +4,9 @@
   const toast = document.querySelector('.toast');
   const isDesktop = Boolean(window.cyberFronApp?.isDesktopApp);
   let authApiBase = window.cyberFronApp?.authApiBase || (window.location.protocol === 'file:' ? 'http://127.0.0.1:4317' : window.location.origin);
-  const installerUrl = './dist/CyberFronSecurity-Setup.exe';
+  const installerUrl = isDesktop
+    ? './dist/CyberFronSecurity-Setup.exe'
+    : 'https://github.com/fronikosumi80/Attachments/releases/latest/download/CyberFronSecurity-Setup.exe';
   let authToken = null;
   let currentUser = null;
   let toastTimer;
