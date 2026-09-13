@@ -1,0 +1,28 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.cyberfronsecurity.desktop
+productName: CyberFronSecurity
+artifactName: CyberFronSecurity-Setup.exe
+files:
+  - filter:
+      - index.html
+      - index.css
+      - index.js
+      - main.cjs
+      - preload.cjs
+      - engine.cjs
+      - server.cjs
+      - package.json
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: CyberFronSecurity
+electronVersion: 38.8.6

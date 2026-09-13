@@ -18,3 +18,9 @@ test('hosted download points to the published GitHub release asset', () => {
   assert.match(script, new RegExp(releaseUrl.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&')));
   assert.doesNotMatch(html, /href="\.\/dist\/CyberFronSecurity-Setup\.exe"/);
 });
+
+test('repository root opens the website without folder navigation', () => {
+  const rootHtml = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+  assert.match(rootHtml, /location\.replace\('CyberFronSecurity\/index\.html'\)/);
+  assert.match(rootHtml, /url=CyberFronSecurity\/index\.html/);
+});
